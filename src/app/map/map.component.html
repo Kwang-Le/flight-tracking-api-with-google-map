@@ -1,0 +1,13 @@
+<google-map height="100vh" width="100%" [zoom]="zoom" [center]="data" >
+    <map-marker 
+    *ngFor="let marker of markers; index as i"
+    [position]="marker.position"
+    [label]="marker.label"
+    [title]="marker.title"
+    [options]="marker.options"
+    [icon] = "marker.clicked === true ? marker.options.icon : iconClicked"
+
+    (mapClick)="clickMarker(i)"
+    >
+</map-marker>
+</google-map>
